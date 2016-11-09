@@ -11,6 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('about', [
+    'as' => 'about',
+    'uses' => 'PagesController@getAbout'
+]);
+
+Route::get('contact', [
+    'as' => 'contact',
+    'uses' => 'PagesController@getContact'
+]);
+
+Route::get('help', [
+    'as' => 'help',
+    'uses' => 'PagesController@getHelp'
+]);
+
+Route::resource("product", "ProductController");
+
+
